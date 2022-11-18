@@ -17,7 +17,16 @@ pip install -r requirements.txt
 python add_free_licenses.py
 ```
 
+## References
+
+- [`Luois45/claim-free-steam-packages`][luois45-gpl-repository]: a tracker of free licenses on Steam,
+- [`woctezuma/steam-next-fest`][steam-next-fest]: a previous project of mine which makes use of ASF IPC,
+- A [Steam guide][steam-guide-no-cost] listing all of the free licenses which increment the library count.
+
 <!-- Definitions -->
 
 [steamdb-free-packages]: <https://steamdb.info/freepackages/>
 [python-download-url]: <https://www.python.org/downloads/>
+[luois45-gpl-repository]: <https://github.com/Luois45/claim-free-steam-packages>
+[steam-next-fest]: <https://github.com/woctezuma/steam-next-fest>
+[steam-guide-no-cost]: <https://steamcommunity.com/sharedfiles/filedetails/?id=2827818083>
