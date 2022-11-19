@@ -32,4 +32,7 @@ def fetch_activated_licenses(steam_id):
     else:
         app_ids = []
 
+    warning = "[WARN] fetched licenses are not exhaustive, e.g. demos are missing!"
+    print(warning)
+
     return to_int(app_ids)
