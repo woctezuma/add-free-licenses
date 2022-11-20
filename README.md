@@ -38,6 +38,7 @@ More information can be found on [this unofficial wiki][steam-userdata-wiki].
 <p>
 
 [`steamctl`][steamctl-github] is a Python package [available on PyPI][steamctl-pypi].
+
 It allows to print to the terminal
 the exhaustive list of appIDs owned by your account.
 
@@ -73,12 +74,12 @@ The output should be formatted as follows: `{appID} {appName}`.
 <p>
 
 **Caveat:** I recommend **not** to use this procedure
-because this does not return an **exhaustive** list of appIDs,
+because the list of appIDs is not **exhaustive** ,
 e.g. demos are missing.
 
-There is a procedure built into the script
+A procedure built into the script
 at [`Luois45`][luois45-gpl-repository]
-which parses a list of appIDs from
+parses a list of appIDs from
 the [`/games/?tab=all`][steam-tab-all] web-page.
 
 **NB:** the "game details" part of your Steam profile have to be public in order to use this method.
@@ -96,7 +97,7 @@ because this retrieves **subIDs** instead of appIDs.
 
 [Instructions][steam-account-licenses-instructions]
 at [`Luois45`][luois45-gpl-repository]
-suggest to execute some code in the JavaScript console of your web-browser
+suggest to execute JavaScript code in your browser
 on the [`/account/licenses/`][steam-account-licenses] web-page.
 
 **NB:** you have to be **authenticated** on Steam in your web-browser in order to use this method.
