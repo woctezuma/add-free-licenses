@@ -4,8 +4,10 @@ from src.cache_utils import (
     save_activated_licenses,
     save_free_licenses,
 )
+from src.cookie_utils import is_dummy_cookie
 from src.fetch_utils import (
     fetch_activated_licenses_via_game_library,
+    fetch_activated_licenses_via_userdata,
     fetch_free_licenses,
 )
 
@@ -18,8 +20,13 @@ def get_free_ids(force_update=False):
     return free_ids
 
 
-def get_owned_ids(steam_id):
+def get_owned_ids(steam_id, cookies=None, force_update=False):
+    if cookies is None:
+        cookies = {}
     owned_ids = load_activated_licenses()
+    if (len(owned_ids) == 0 or force_update) and not is_dummy_cookie(cookies):
+        owned_ids = fetch_activated_licenses_via_userdata(cookies)
+        save_activated_licenses(owned_ids)
     if len(owned_ids) == 0:
         # NB: there is NO `force_update` variable in the if-statement,
         # because this should be run AT BEST ONCE: the first time.
