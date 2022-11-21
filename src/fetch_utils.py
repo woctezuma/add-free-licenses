@@ -22,7 +22,7 @@ def fetch_free_licenses(url=INPUT_URL, separator=INPUT_SEPARATOR):
     return to_int(app_ids)
 
 
-def fetch_activated_licenses(steam_id):
+def fetch_activated_licenses_via_game_library(steam_id):
     response = requests.get(url=f"{STEAM_URL}{steam_id}{STEAM_ENDPOINT}")
     if response.ok:
         html = response.text
