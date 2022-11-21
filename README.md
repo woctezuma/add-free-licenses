@@ -24,7 +24,7 @@ here are a few methods.
 
 The variable `rgOwnedApps` in the JSON data returned by
 the [`/dynamicstore/userdata`][steam-userdata-endpoint] endpoint is
-the exhaustive list of appIDs owned by your account.
+a large yet non-exhaustive list of appIDs owned by your account.
 More information can be found on [this unofficial wiki][steam-userdata-wiki].
 
 **NB:** you have to be **authenticated** on Steam in your web-browser in order to use this method.
