@@ -1,4 +1,5 @@
 from src.batch_utils import batch_process
+from src.cookie_utils import load_cookies
 from src.get_utils import get_free_ids, get_owned_ids
 from src.time_utils import get_wait_time, is_rate_limited
 
@@ -8,8 +9,11 @@ STEAM_ID = "wokuma"
 def main():
     free_ids = get_free_ids(force_update=False)
 
-    # TODO initialize the JSON file with steamctl
-    owned_ids = get_owned_ids(steam_id=STEAM_ID)
+    owned_ids = get_owned_ids(
+        steam_id=STEAM_ID,
+        cookies=load_cookies(),
+        force_update=False,
+    )
 
     new_free_ids = set(free_ids).difference(owned_ids)
     print(f"There are {len(new_free_ids)} license IDs to add to your account.")
