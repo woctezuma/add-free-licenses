@@ -2,6 +2,7 @@ import re
 
 import requests
 
+from src.cookie_utils import warn_if_missing_fields
 from src.utils import to_int
 
 GITHUB_URL = "https://raw.githubusercontent.com/Luois45/claim-free-steam-packages"
@@ -12,7 +13,6 @@ STEAM_URL = "https://steamcommunity.com/id/"
 STEAM_ENDPOINT = "/games/?tab=all"
 USERDATA_URL = "https://store.steampowered.com/dynamicstore/userdata"
 USERDATA_APP_FIELD = "rgOwnedApps"
-REQUIRED_COOKIE_FIELD = "steamLoginSecure"
 
 
 def fetch_free_licenses(url=INPUT_URL, separator=INPUT_SEPARATOR):
@@ -42,9 +42,7 @@ def fetch_activated_licenses_via_game_library(steam_id):
 
 
 def fetch_activated_licenses_via_userdata(cookies):
-    if REQUIRED_COOKIE_FIELD not in cookies:
-        warning = f"[WARN] cookies are missing the {REQUIRED_COOKIE_FIELD} field!"
-        print(warning)
+    warn_if_missing_fields(cookies)
 
     response = requests.get(url=USERDATA_URL, cookies=cookies)
     if response.ok:
