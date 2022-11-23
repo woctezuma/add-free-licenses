@@ -22,8 +22,6 @@ def main():
     if is_rate_limited():
         print(f"You are rate-limited. Wait for {get_wait_time()} seconds.")
     else:
-        # TODO check if ASF is running
-        # TODO parse ASF output to check if the activation was OK.
         newly_activated_ids = batch_process(new_free_ids)
         print(f"Activated ids: {newly_activated_ids}")
         if len(newly_activated_ids) > 0:
