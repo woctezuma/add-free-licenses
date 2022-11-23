@@ -27,4 +27,5 @@ def generate_addlicense_command(ids, bot_name, id_prefix):
 
 async def addlicense(ids, bot_name=BOT_NAME, id_prefix=ID_PREFIX):
     async with IPC() as asf:
-        await send_addlicense_command(asf, ids, bot_name, id_prefix)
+        response = await send_addlicense_command(asf, ids, bot_name, id_prefix)
+    return response
