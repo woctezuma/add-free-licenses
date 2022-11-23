@@ -33,9 +33,9 @@ def batch_process(new_free_ids, num_batches=NUM_BATCHES):
                 asf_log = response.result
                 print(asf_log)
 
-            save_last_updated_timestamp()
+                save_last_updated_timestamp()
 
-            newly_activated_ids += id_batch
+                newly_activated_ids += id_batch
 
     loop.close()
 
