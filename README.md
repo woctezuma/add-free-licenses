@@ -2,6 +2,8 @@
 
 This repository contains Python code to automatically [add free licenses][steamdb-free-packages] on Steam.
 
+![Illustration cover][img-cover]
+
 ## Requirements
 
 - Install the latest version of [Python 3.X][python-download-url].
@@ -131,6 +133,7 @@ python add_free_licenses.py
 <!-- Definitions -->
 
 [steamdb-free-packages]: <https://steamdb.info/freepackages/>
+[img-cover]: <https://github.com/woctezuma/add-free-licenses/wiki/img/cover.png>
 [python-download-url]: <https://www.python.org/downloads/>
 [github-ASF]: <https://github.com/JustArchiNET/ArchiSteamFarm>
 [wiki-ASF-IPC]: <https://github.com/JustArchiNET/ArchiSteamFarm/wiki/IPC>
