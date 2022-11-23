@@ -27,7 +27,11 @@ def batch_process(new_free_ids, num_batches=NUM_BATCHES):
                 f"Batch n°{batch_no + 1}/{num_batches}: {id_batch}",
             )
 
-            loop.run_until_complete(addlicense(id_batch))
+            response = loop.run_until_complete(addlicense(id_batch))
+
+            if response.ok:
+                asf_log = response.result
+                print(asf_log)
 
             save_last_updated_timestamp()
 
