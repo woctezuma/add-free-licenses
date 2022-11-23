@@ -9,6 +9,7 @@ from src.fetch_utils import (
     fetch_activated_licenses_via_game_library,
     fetch_activated_licenses_via_userdata,
     fetch_free_licenses,
+    load_activated_licenses_via_steamctl,
 )
 
 
@@ -25,6 +26,10 @@ def get_owned_ids(steam_id, cookies=None, force_update=False):
     if cookies is None:
         cookies = {}
     owned_ids = load_activated_licenses()
+    if len(owned_ids) == 0:
+        owned_ids = load_activated_licenses_via_steamctl()
+        if len(owned_ids) > 0:
+            save_activated_licenses(owned_ids)
     if (len(owned_ids) == 0 or force_update) and not is_dummy_cookie(cookies):
         owned_ids = fetch_activated_licenses_via_userdata(cookies)
         if len(owned_ids) > 0:
