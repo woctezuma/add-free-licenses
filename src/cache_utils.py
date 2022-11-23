@@ -5,6 +5,7 @@ FREE_LICENSE_FNAME = f"{DATA_FOLDER}free_licenses.json"
 ACTIVATED_LICENSE_FNAME = f"{DATA_FOLDER}activated_licenses.json"
 TIMESTAMP_FNAME = f"{DATA_FOLDER}last_updated.json"
 COOKIE_FNAME = f"{DATA_FOLDER}cookies.json"
+STEAMCTL_OUTPUT_FNAME = f"{DATA_FOLDER}steamctl_output.txt"
 
 
 def load_activated_licenses(fname=ACTIVATED_LICENSE_FNAME):

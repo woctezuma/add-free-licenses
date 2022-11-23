@@ -2,6 +2,7 @@ import re
 
 import requests
 
+from src.cache_utils import STEAMCTL_OUTPUT_FNAME
 from src.cookie_utils import warn_if_missing_fields
 from src.utils import to_int
 
@@ -49,6 +50,16 @@ def fetch_activated_licenses_via_userdata(cookies):
         data = response.json()
         app_ids = data[USERDATA_APP_FIELD]
     else:
+        app_ids = []
+
+    return to_int(app_ids)
+
+
+def load_activated_licenses_via_steamctl(fname=STEAMCTL_OUTPUT_FNAME):
+    try:
+        with open(fname, encoding="utf8") as file:
+            app_ids = [line.split()[0] for line in file.readlines()]
+    except FileNotFoundError:
         app_ids = []
 
     return to_int(app_ids)
