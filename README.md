@@ -107,6 +107,14 @@ on the [`/account/licenses/`][steam-account-licenses] web-page.
 </p>
 </details>
 
+Because it is the only method which returns an **exhaustive** list, the recommended method is:
+
+```bash
+pip install pipx
+pipx install git+https://github.com/woctezuma/steamctl.git@67-fix-charmap
+steamctl apps list > data/steamctl_output.txt
+```
+
 ## Usage
 
 ```bash
