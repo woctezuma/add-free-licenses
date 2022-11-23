@@ -8,7 +8,7 @@ STEAM_ID = "wokuma"
 
 
 def main():
-    free_ids = get_free_ids(force_update=False)
+    free_ids = get_free_ids(force_update=True)
 
     owned_ids = get_owned_ids(
         steam_id=STEAM_ID,
