@@ -57,7 +57,7 @@ def fetch_activated_licenses_via_userdata(cookies):
 
 def load_activated_licenses_via_steamctl(fname=STEAMCTL_OUTPUT_FNAME):
     try:
-        with open(fname, encoding="utf8") as file:
+        with open(fname) as file:
             app_ids = [line.split()[0] for line in file.readlines()]
     except FileNotFoundError:
         app_ids = []
