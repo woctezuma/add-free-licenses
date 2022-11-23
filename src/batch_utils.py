@@ -1,5 +1,7 @@
 import asyncio
 
+from aiohttp.client_exceptions import ClientConnectorError
+
 from src.asf_utils import addlicense
 from src.time_utils import save_last_updated_timestamp
 
@@ -27,7 +29,10 @@ def batch_process(new_free_ids, num_batches=NUM_BATCHES):
                 f"Batch n°{batch_no + 1}/{num_batches}: {id_batch}",
             )
 
-            response = loop.run_until_complete(addlicense(id_batch))
+            try:
+                response = loop.run_until_complete(addlicense(id_batch))
+            except ClientConnectorError:
+                break
 
             if response.ok:
                 asf_log = response.result
