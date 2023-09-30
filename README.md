@@ -1,3 +1,6 @@
+> **Note**
+> Consider switching to the ASF plugin [**`FreePackages`**][asf-free-citrinate] developped by **Citrinate**!
+
 # Add Free Licenses
 
 This repository contains Python code to automatically [add free licenses][steamdb-free-packages] on Steam.
@@ -136,6 +139,7 @@ python add_free_licenses.py
 [img-cover]: <https://github.com/woctezuma/add-free-licenses/wiki/img/cover.png>
 [python-download-url]: <https://www.python.org/downloads/>
 [github-ASF]: <https://github.com/JustArchiNET/ArchiSteamFarm>
+[asf-free-citrinate]: <https://github.com/Citrinate/FreePackages>
 [wiki-ASF-IPC]: <https://github.com/JustArchiNET/ArchiSteamFarm/wiki/IPC>
 [steam-userdata-endpoint]: <https://store.steampowered.com/dynamicstore/userdata>
 [steam-userdata-wiki]: <https://github.com/Revadike/InternalSteamWebAPI/wiki/Get-Dynamic-Store-User-Data>
