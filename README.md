@@ -1,4 +1,4 @@
-> **Note**
+> [!Note]
 > Consider switching to the ASF plugin [**`FreePackages`**][asf-free-citrinate] developped by **Citrinate**!
 
 # Add Free Licenses
